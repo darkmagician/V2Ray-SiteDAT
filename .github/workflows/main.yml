@@ -1,0 +1,22 @@
+name: Update SiteDAT
+
+on:
+  workflow_dispatch:
+  schedule:
+  - cron: "23 7 * * *"
+    
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2    
+    - name: Run the job
+      run: echo "hello"
+    - name: Commit
+      run: |
+        git config --global user.name 'sitedat'
+        git config --global user.email 'sitedat@users.noreply.github.com'
+        git commit -am "Automated Update"
+        git push
