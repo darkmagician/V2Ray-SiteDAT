@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2    
     - name: Run the job
-      run: echo "hello"
+      run: bash updateSiteDAT.sh
     - name: Commit
       run: |
         git config --global user.name 'sitedat'
